@@ -10,38 +10,49 @@
 
 <body>
     <div id="root">
-        <div>
-            {{word}}
-        </div>
-        <form v-on:submit="onSubmitForm">
-            <input type="text" v-model="value">
-            <button type="submit">입력!</button>
-        </form>
-        <div>{{result}}</div>
+            <word-relay></word-relay>
+            <word-relay></word-relay>
+            <word-relay></word-relay>
+            <word-relay></word-relay>
     </div>
-    <script>
-        const app = new Vue({
-            el: '#root',
-            data: {
-                word: '에릭',
-                result: '',
-                value: '',
-            },
-            methods: {
-                onSubmitForm(e) {
-                    e.preventDefault();
-                    if (this.word[this.word.length - 1] === this.value[0]) {
-                        this.result = '딩동댕';
-                        this.word = this.value;
-                        this.value = '';
-                        this.
-                    } else {
-                        this.result = '땡';
-                    }
+        <script>
+            Vue.component('word-relay', {
+                template: `
+                <div>
+                    <div>{{word}}</div>
+                    <form v-on:submit="onSubmitForm">
+                        <input type="text" v-model="value">
+                        <button type="submit">입력!</button>
+                    </form>
+                    <div>{{result}}</div>
+                </div>
+                `,
+                data() {
+                    return {
+                    word: '에릭',
+                    result: '',
+                    value: '',
+                    };
                 },
-            },
-        });
-    </script>
+                methods: {
+                    onSubmitForm(e) {
+                        e.preventDefault();
+                        if (this.word[this.word.length - 1] === this.value[0]) {
+                            this.result = '딩동댕';
+                            this.word = this.value;
+                            this.value = '';
+                        } else {
+                            this.result = '땡';
+                        }
+                    }
+                }
+            })
+        </script>
+        <script>
+            const app = new Vue({
+                el: '#root',
+            });
+        </script>
 </body>
 
 </html>
