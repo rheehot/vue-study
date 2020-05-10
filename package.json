@@ -1,0 +1,26 @@
+{
+  "name": "number-baseball",
+  "version": "1.0.0",
+  "description": "VUE를 공부하자!",
+  "main": "js.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yyy9942/vue-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yyy9942/vue-study/issues"
+  },
+  "homepage": "https://github.com/yyy9942/vue-study#readme",
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11"
+  }
+}
