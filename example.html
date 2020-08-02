@@ -1,0 +1,26 @@
+<html>
+
+<body>
+    <script type="text/javascript">
+        var arr = new Array(2);
+        var tot = 0;
+
+        function sum() {
+            for (i = 0; i < 2; i++) {
+                var tot = 0;
+                tot += parseInt(arr[i])
+            }
+            alert("합계=" + tot);
+        }
+
+        for (var i = 0; i < 2; i++) {
+            arr[i] = prompt("숫자" + (i+1) + "입력");
+        }
+        // arr[0] = NaN
+        // arr[1] = 1번째 입력한 값
+        // arr[2] = 2번째 입력한 값
+    </script>
+    <input type="button" onClick="sum()" value="계산하기">
+</body>
+
+</html>
