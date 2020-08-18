@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <child-component v-bind:propsdata='message'></child-component>
+        <sibling-component v-bind:propsdata='anotherMessage'></sibling-component>
+    </div>
+    <script>
+        // #1, sibling-component를 이름으로 하는 새로운 컴포넌트 등록
+        // #2, sibling-component에 props 속성으로 내려보낼 데이터 속성 anotherMessage를 추가한 후, 전달해보기
+        // #3, 하위 컴포넌트로 sibling-component를 등록하ㅏ고 v-bind속성으로 선언한 props속성 propsdata를 지정한 후 해당 메세지 전달
+        Vue.component('sibling-component', {
+            props: ['propsdata'],
+            template: '<p>{{propsdata}}</p>'
+        }) 
+
+        Vue.component('child-component', {
+            props: ['propsdata'],
+            template: '<p>{{propsdata}}</p>'
+        })
+
+        new Vue({
+            el: '#app',
+            data: {
+                message: 'hello eric',
+                anotherMessage: 'another eric'
+            }
+        })
+    </script>
+</body>
+</html>
